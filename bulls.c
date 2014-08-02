@@ -72,7 +72,8 @@ int main(void)
 			r[i] = c;
 		}
 		n = 1;
-		u[0] = u[1] = u[2] = u[3] = 0;
+		for (i = 0; i < LEN; i++)
+			u[i] = 0;
 		/* repeat until user digits match the result */
 		while (*(unsigned *)&u != *(unsigned *)&r) {
 			i = 0;
