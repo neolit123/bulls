@@ -11,7 +11,7 @@ any platform that has a C compiler.
 Author:
 	Lubomir I. Ivanov (neolit123[at]gmail.com)
 Year written:
-	2013
+	2013-2014
 
 This project's source code is released in the public domain without warranty
 of any kind.
