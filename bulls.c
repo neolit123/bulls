@@ -47,13 +47,14 @@ unsigned number_valid(char *u)
 
 int main(void)
 {
+	const char z = 0x30; /* offset of ASCII '0' */
 	char c;
 	char u[LEN], r[LEN];
 	short i;
 	unsigned n;
 
 	printf("\nBULLS AND COWS\n" \
-		"by Lubomir I. Ivanov <neolit123@gmail.com>, 2013\n\n" \
+		"by Lubomir I. Ivanov <neolit123@gmail.com>, 2014\n\n" \
 		"gameplay:\n" \
 		"\t - you win if you find %u bulls (%uB0K)\n" \
 		"\t - all digits in the number must be unique\n" \
@@ -80,20 +81,19 @@ int main(void)
 			do {
 				c = getchar();
 				if (i < LEN) {
-					u[i] = c - 48;
+					u[i] = c - z;
 					i++;
 				}
 			} while (c != '\n');
-			/* skip a turn;
-			 * 0xDA is the result of casting ('\n' - 48) to unsinged int */
-			if (*(unsigned *)&u != 0xda) {
+			if (u[0] != '\n' - z) { /* skip a turn, when enter is pressed */
 				if (number_valid(u))
 					result(u, r, n++);
 				else
-					puts("* incorrect digits\n");
+					puts("* incorrect digits");
 			}
 		}
 		printf("\nyou win!\n\ncontinue playing [y/n]: ");
 	} while (getchar() == 'y');
-	return 0;
+
+	return 1;
 }
