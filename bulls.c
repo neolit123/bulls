@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <time.h>
 
-#define LEN 4 /* number of digits in number */
+#define LEN 4 /* number of digits to use */
 
 void result(char *u, char *r, unsigned n)
 {
