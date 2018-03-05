@@ -85,7 +85,7 @@ int main(void)
 					i++;
 				}
 			} while (c != '\n');
-			if (u[0] != '\n' - z) { /* skip a turn, when enter is pressed */
+			if (i > 1) { /* validate only if the buffer is filled */
 				if (number_valid(u))
 					result(u, r, n++);
 				else
