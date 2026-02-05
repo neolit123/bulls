@@ -95,5 +95,5 @@ int main(void)
 		printf("\nyou win!\n\ncontinue playing [y/n]: ");
 	} while (getchar() == 'y');
 
-	return 1;
+	return 0;
 }
