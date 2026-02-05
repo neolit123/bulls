@@ -53,6 +53,8 @@ int main(void)
 	short i;
 	unsigned n;
 
+	srand(time(NULL));
+
 	printf("\nBULLS AND COWS\n" \
 		"by Lubomir I. Ivanov <neolit123@gmail.com>, 2014\n\n" \
 		"gameplay:\n" \
@@ -64,7 +66,6 @@ int main(void)
 	do { /* game loop */
 		printf("\nguess the %u digit number:\n", LEN);
 		/* prepare the result */
-		srand(time(NULL));
 		r[0] = 1 + rand() % 9;
 		for (i = 1; i < LEN; i++) {
 			do {
